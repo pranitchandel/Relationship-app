@@ -1,38 +1,80 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+h1 {
+  text-align: center;
+  margin: 10px;
+}
+.relationships {
+  background-color: rgba(250, 235, 215, 0.548);
+  height: 300px;
+  overflow: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.individualPath {
+  background-color: rgba(163, 44, 44, 0.719);
+  height: 40px;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px 15px 20px 4px;
+}
+
+.addRelationSpan {
+  background-color: black;
+  color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 40px;
+  border-radius: 10px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+}
+
+.relationListSpan {
+  background-color: black;
+  color: antiquewhite;
+  height: 30px;
+  min-width: 70px;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 4px;
+}
+.listContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spanContainer {
+  min-width: 500px;
+}
+
+.relationContainer {
+  width: fit-content;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px auto;
+}
+
+.error {
+  color: red;
+  height: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 500px) {
+  .spanContainer {
+    min-width: 300px;
   }
 }

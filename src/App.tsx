@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
+import AddPerson from "./Components/AddPerson"; 
+import AddRelation from './Components/AddRelation';
+import GetDegree from './Components/GetDegree';
 
 function App() {
+  const [personList,setPersonList] = useState([]);
+  const [relationships,setRelationship] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Find relation?</h1>
+      <AddPerson setPersonList = {setPersonList}/>
+      <AddRelation personList = {personList} setRelationship = {setRelationship}/>
+      <GetDegree personList={personList} relationships= {relationships}/>
     </div>
   );
 }
