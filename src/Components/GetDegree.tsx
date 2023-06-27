@@ -194,25 +194,27 @@ const GetDegree = ({ personList, relationships }) => {
       </div>
 
       <div className="error">{error}</div>
-      {path.length > 0 ? (
-        path.map((pt, k) => {
-          return (
-            <div key={k} className="relationContainer">
-              {JSON.parse(pt).map((p, key) => {
-                return (
-                  <span className="individualPath" key={key}>
-                    {personList[p]}{" "}
-                  </span>
-                );
-              })}
-            </div>
-          );
-        })
-      ) : (
-        <div className="relationContainer">
-          <span className="individualPath">No relations</span>
-        </div>
-      )}
+      <div className="relationsWrapper">
+        {path.length > 0 ? (
+          path.map((pt, k) => {
+            return (
+              <div key={k} className="relationContainer">
+                {JSON.parse(pt).map((p, key) => {
+                  return (
+                    <span className="individualPath" key={key}>
+                      {personList[p]}{" "}
+                    </span>
+                  );
+                })}
+              </div>
+            );
+          })
+        ) : (
+          <div className="relationContainer">
+            <span className="individualPath">No relations</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
