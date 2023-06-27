@@ -162,6 +162,9 @@ h2 {
 }
 
 .listText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 10px;
   padding: 4px;
   height: 30px;
@@ -327,7 +330,13 @@ height: fit-content;
   }
 
   .spanContainer {
-    min-width: 300px;
+    min-width: 150px;
+    max-width: 80%;
     justify-content: flex-start;
+  }
+
+  .listText{
+    margin: 0 5px;
+    padding: 3px;
   }
 }
