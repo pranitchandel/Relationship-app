@@ -10,13 +10,7 @@ function App() {
   return (
     <div className="App">
       <h1>SoulRoute</h1>
-      <div
-        style={{
-          width: "80%",
-          margin: "auto",
-          height: "100vh",
-        }}
-      >
+      <div className="appWrapper">
         <AddPerson setPersonList={setPersonList} />
         <AddRelation
           personList={personList}
