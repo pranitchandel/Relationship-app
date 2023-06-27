@@ -31,47 +31,21 @@ const AddPerson = ({ setPersonList }) => {
   return (
     <div>
       <h2>Add new person</h2>
-      <Stack
-        spacing={2}
-        direction="row"
-        sx={{
-          justifyContent: "space-around",
-          alignItems: "center",
-          width: "60%",
-          margin: "10px auto",
-        }}
-      >
-        <Box
-          component="form"
-          sx={{
-            "& .MuiTextField-root": { m: 1, width: "25ch" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <div>
-            <TextField
-              value={person}
-              required
-              id="outlined-required"
-              label="Required"
-              onChange={handlePersonChange}
-            />
-          </div>
-        </Box>
-        <Box>
-          <Button
-            sx={{
-              width: "25ch",
-              height: "100%",
-            }}
-            variant="contained"
-            onClick={handleAddPerson}
-          >
-            Add
-          </Button>
-        </Box>
-      </Stack>
+      <div className="addPersonWrapper">
+        <input
+          type="text"
+          value={person}
+          name="person"
+          onChange={handlePersonChange}
+          placeholder="Enter new person"
+          required
+          className="addPersonInput"
+        />
+        <button onClick={handleAddPerson} className="addButton">
+          Add Person
+        </button>
+      </div>
+
       <div className="error">{error}</div>
     </div>
   );

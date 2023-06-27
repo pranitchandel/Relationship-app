@@ -12,10 +12,10 @@ const GetDegree = ({ personList, relationships }) => {
   const [secondPerson, setSecondPerson] = useState("");
   const [error, setError] = useState("");
   const [path, setPath] = useState([]);
-  const handleFirstChange = (event: SelectChangeEvent) => {
+  const handleFirstChange = (event: any) => {
     setFirstPerson(event.target.value as string);
   };
-  const handleSecondChange = (event: SelectChangeEvent) => {
+  const handleSecondChange = (event: any) => {
     setSecondPerson(event.target.value as string);
   };
 
@@ -95,16 +95,16 @@ const GetDegree = ({ personList, relationships }) => {
 
   const Menulist = personList.map((person, key) => {
     return (
-      <MenuItem key={key} value={person}>
+      <option value={person} key={key}>
         {person}
-      </MenuItem>
+      </option>
     );
   });
 
   return (
     <div>
       <h2>Check degree of relationship</h2>
-      <Stack
+      {/* <Stack
         spacing={2}
         direction="row"
         sx={{
@@ -153,7 +153,46 @@ const GetDegree = ({ personList, relationships }) => {
         >
           Get Degree
         </Button>
-      </Stack>
+      </Stack> */}
+      {/* <div className="error">{error}</div> */}
+
+      <div className="relationWrapper">
+        <div className="selectWrapper">
+          <label htmlFor="firstName">First Person</label>
+          <select
+            className="personSelect"
+            name="firstName"
+            id="personNames"
+            onChange={handleFirstChange}
+          >
+            <option disabled selected value="">
+              Select an option
+            </option>
+            {Menulist}
+          </select>
+        </div>
+        <span className="addRelationSpan">is friend of </span>
+        <div className="selectWrapper">
+          <label htmlFor="secondName">Second Person</label>
+          <select
+            className="personSelect"
+            name="secondName"
+            id="personNames"
+            onChange={handleSecondChange}
+          >
+            <option disabled selected value="">
+              Select an option
+            </option>
+            {Menulist}
+          </select>
+        </div>
+        <div className="addRelationWrapper">
+          <button onClick={handleClick} className="relationAdd">
+            Get Relations
+          </button>
+        </div>
+      </div>
+
       <div className="error">{error}</div>
       {path.length > 0 ? (
         path.map((pt, k) => {

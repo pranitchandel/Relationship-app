@@ -1,49 +1,136 @@
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;400&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;400;900&family=IBM+Plex+Sans&family=Inter:wght@100;200&family=PT+Sans+Narrow:wght@700&family=Roboto:wght@100&display=swap');
+*{
+  scroll-behavior:smooth;
   box-sizing: border-box;
-  font-family: "Be Vietnam Pro", sans-serif;
+  /* font-family:'Courier New', Courier, monospace; */
+  font-family: Be Vietnam Pro;
 }
+
+body{
+  margin:0;
+  padding: 0;
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+ 
+::-webkit-scrollbar-track {
+  /* background-color: rgba(179, 26, 26, 0.3); */
+}
+ 
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgrey;
+  /* outline: 1px solid slategrey; */
+}
+
+
+input{
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+select{
+  border: none;
+  outline: none;
+}
+
+button{
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+
 h1 {
   text-align: center;
-  margin: 10px;
+  margin: 0;
+  color: #fff;
 }
+
+h2 {
+  margin: 10px 0;
+  color: #fff;
+}
+
+.App{
+  /* width: 70%; */
+  margin: auto;
+  background-color: #000;
+  padding: 10px;
+  /* border: 2px solid green; */
+}
+
 .relationships {
-  background-color: rgba(250, 235, 215, 0.548);
+  background-color: #000;
+  /* box-shadow: 0px 3px 10px 2px rgba(255, 255, 255, 1);  */
   height: 300px;
   overflow: auto;
   text-align: center;
-  width: 100%;
+  width: 80%;
+  margin: auto;
+  border: 2px solid #fff;
 }
 
+.relationships :nth-child(2n){
+  /* background-color: rgb(26, 26, 26); */
+}
+
+.removeRelationBtn{
+  background-color: #ff0000 !important;
+  opacity: 0.7;
+  width: 5%;
+  color: #fff;
+  min-height: fit-content;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 1;
+  filter : drop-shadow(0px 0px 5px red) invert(0);
+}
+
+.removeRelationBtn:hover{
+  opacity: 1;
+}
+
+
 .individualPath {
-  background-color: rgba(163, 44, 44, 0.719);
+  background-color: #000;
   height: 40px;
   min-width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #fff;
   border-radius: 4px 15px 20px 4px;
+  color: #fff;
+  padding: 2px;
 }
 
 .addRelationSpan {
   background-color: black;
-  color: antiquewhite;
+  border: 2px solid #fff;
+  color: #fff;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 110px;
-  height: 40px;
+  justify-content: center;
+  min-height: 50px;
   border-radius: 10px;
-  font-family: "Be Vietnam Pro", sans-serif;
+  padding: 5px;
   font-weight: 500;
+  /* align-self: flex-end; */
 }
 
 .relationListSpan {
-  background-color: black;
-  color: antiquewhite;
+  /* background-color: black !important; */
+  color: #fff;
   height: 30px;
   min-width: 70px;
   max-width: 200px;
@@ -51,12 +138,28 @@ h1 {
   border-radius: 4px;
   padding: 4px;
   margin: 3px;
+  border: 2px solid #fff;
 }
 .listContainer {
+  /* width: 100%; */
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5px 0px;
+  /* border: 2px solid #000; */
 }
+
+.listText{
+  margin: 0 10px;
+  padding: 4px;
+  height: 30px;
+  color: #000;
+  border-radius: 4px;
+  background-color: #fff !important;
+  /* border: 2px solid #fff; */
+}
+
 .spanContainer {
   min-width: 500px;
 }
@@ -67,12 +170,98 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   margin: 5px auto;
+  gap: 5px;
 }
 
 .error {
   color: red;
   height: 20px;
   text-align: center;
+}
+
+.addPersonWrapper{
+  display: flex;
+  height: 50px;
+  width: 60%;
+  margin: auto;
+  border: 1px solid #000;
+}
+
+.addPersonInput{
+  font-size: 16px;
+  padding: 0px 10px;
+  letter-spacing: 0.1px;
+}
+
+.addButton{
+  margin-left: 10px;
+  width: 40%;
+  font-size: 20px;
+  background-color: #fff;
+  color: #000;
+  transition: all 0.2s;
+}
+
+.addButton:hover{
+  color: #fff;
+  background-color: #000;
+  border: 2px solid #fff;
+}
+
+.addRelationWrapper{
+  height: 60px;
+  min-width: 200px;
+  /* align-self: flex-end; */
+}
+
+.relationAdd{
+  font-size: 20px;
+  background-color: #fff;
+  color: #000;
+  transition: all 0.15s;
+}
+
+.relationAdd:hover{
+  color: #fff;
+  background-color: #000;
+  border: 2px solid #fff;
+}
+
+.personSelect{
+  /* min-width: 60%; */
+  min-height: 50px;
+  background-color: rgb(255,255,255,0.05);
+  border-radius:8px;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 5px;
+
+}
+.selectWrapper{
+  color: #fff;
+  max-width: 20%;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  margin-bottom: 10px;
+}
+
+.relationWrapper{
+  /* border: 1px solid black; */
+  width: 80%;
+  display: flex;
+  align-items: flex-end;
+  height: 85px;
+  justify-content: space-between;
+  margin: auto;
+  gap: 10px;
+}
+
+.options{
+  /* border: 2px solid green; */
 }
 
 @media screen and (max-width: 500px) {
